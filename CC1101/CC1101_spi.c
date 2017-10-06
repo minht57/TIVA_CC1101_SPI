@@ -1,3 +1,15 @@
+/******************************************************************************
+ *
+ * www.payitforward.edu.vn
+ *
+ *****************************************************************************/
+
+/*
+ * cc1101_spi.h
+ *      Author: PIF
+ *      Editor: minht57
+ */
+
 #include "CC1101_spi.h"
 
 //#define ENTER_CRITICAL_SECTION() taskENTER_CRITICAL()
@@ -156,3 +168,7 @@ uint8_t spiRegAccess(uint8_t addrByte, uint8_t writeValue)
 	EXIT_CRITICAL_SECTION();
 	return(readValue);
 }
+
+/******************************************************************************
+ * END OF CC1101_spi.c
+ *****************************************************************************/

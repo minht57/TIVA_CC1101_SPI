@@ -1,3 +1,15 @@
+/******************************************************************************
+ *
+ * www.payitforward.edu.vn
+ *
+ *****************************************************************************/
+
+/*
+ * cc1101_spi.h
+ *      Author: PIF
+ *      Editor: minht57
+ */
+
 #ifndef __CC1101_SPI_H__
 #define __CC1101_SPI_H__
 #include <stdint.h>
@@ -90,3 +102,7 @@ uint8_t spiRegAccess(uint8_t addrByte, uint8_t writeValue);
 void spiBurstFifoAccess(uint8_t addrByte, uint8_t *pData, uint8_t len);
 
 #endif
+
+/******************************************************************************
+ * END OF CC1101_spi.h
+ *****************************************************************************/

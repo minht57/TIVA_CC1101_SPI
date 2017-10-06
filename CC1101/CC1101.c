@@ -1,8 +1,18 @@
+/******************************************************************************
+ *
+ * www.payitforward.edu.vn
+ *
+ *****************************************************************************/
+
+/*
+ * CC1101.c
+ *      Author: PIF
+ *      Editor: minht57
+ */
+
 #include <stdint.h>
 #include <stdbool.h>
 #include "CC1101.h"
-
-#ifndef RF_APC340
 
 #define DelayMs(x) vTaskDelay(x/portTICK_PERIOD_MS)
 #define NUM_RXBYTES  0x7F        // Mask "# of bytes" field in _RXBYTES
@@ -334,4 +344,7 @@ void CC1101_set_handler(void (*Callback)())
 {
 	CC1101_callback = Callback;
 }
-#endif
+
+/******************************************************************************
+ * END OF CC1101.c
+ *****************************************************************************/

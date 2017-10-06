@@ -16,6 +16,10 @@
 #include <stdint.h>
 #include "CC1101_spi.h"
 #include "cc1101_define.h"
+/*
+ * If define FREQ_433MHz, carrier frequency is 433MHz else carrier frequency is 868MHz.
+ */
+#define FREQ_433MHz
 
 typedef enum
 {

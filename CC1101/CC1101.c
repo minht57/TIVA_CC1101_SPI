@@ -283,42 +283,47 @@ void cc1101_writesettings(void)
 	CC1101_WriteReg(CC1100_IOCFG0     ,0x09); 
 	CC1101_WriteReg(CC1100_FSCTRL1    ,0x0C);
 	CC1101_WriteReg(CC1100_FSCTRL0    ,0x00);
- /* 433 */
+#ifdef FREQ_433MHz
+	/* 433 */
+    CC1101_WriteReg(CC1100_FREQ2      ,0x10);
+    CC1101_WriteReg(CC1100_FREQ1      ,0xB1);
+    CC1101_WriteReg(CC1100_FREQ0      ,0x3B);
+#else
+     /* 868Mhz */
+     CC1101_WriteReg(CC1100_FREQ2      ,0x21);
+     CC1101_WriteReg(CC1100_FREQ1      ,0x62);
+     CC1101_WriteReg(CC1100_FREQ0      ,0x76);
+#endif
+     CC1101_WriteReg(CC1100_MDMCFG4    ,0xF5);
+     CC1101_WriteReg(CC1100_DEVIATN    ,0x15);
+     CC1101_WriteReg(CC1100_AGCCTRL2   ,0x03);
+     CC1101_WriteReg(CC1100_AGCCTRL1   ,0x40);
+     CC1101_WriteReg(CC1100_AGCCTRL0   ,0x91);
 
- /* 868Mhz */
- CC1101_WriteReg(CC1100_FREQ2      ,0x21);
- CC1101_WriteReg(CC1100_FREQ1      ,0x62);
- CC1101_WriteReg(CC1100_FREQ0      ,0x76);
- CC1101_WriteReg(CC1100_MDMCFG4    ,0xF5);
- CC1101_WriteReg(CC1100_DEVIATN    ,0x15);
- CC1101_WriteReg(CC1100_AGCCTRL2   ,0x03);
- CC1101_WriteReg(CC1100_AGCCTRL1   ,0x40);
- CC1101_WriteReg(CC1100_AGCCTRL0   ,0x91);
-
- CC1101_WriteReg(CC1100_MDMCFG3    ,0x83);
- CC1101_WriteReg(CC1100_MDMCFG2    ,0x13);
- CC1101_WriteReg(CC1100_MDMCFG1    ,0x22);
- CC1101_WriteReg(CC1100_MDMCFG0    ,0xF8);
- CC1101_WriteReg(CC1100_CHANNR     ,ChannelRF);
- CC1101_WriteReg(CC1100_FREND1     ,0xB6);
- CC1101_WriteReg(CC1100_FREND0     ,0x10);
- CC1101_WriteReg(CC1100_MCSM0      ,0x18);
- CC1101_WriteReg(CC1100_MCSM1      ,0x3F); // Only set in Master node
- CC1101_WriteReg(CC1100_FOCCFG     ,0x1D);
- CC1101_WriteReg(CC1100_BSCFG      ,0x1C);
- CC1101_WriteReg(CC1100_FSCAL3     ,0xEA);
- CC1101_WriteReg(CC1100_FSCAL2     ,0x2A);
- CC1101_WriteReg(CC1100_FSCAL1     ,0x00);
- CC1101_WriteReg(CC1100_FSCAL0     ,0x1F);
- CC1101_WriteReg(CC1100_FSTEST     ,0x59);
- CC1101_WriteReg(CC1100_TEST2      ,0x88);
- CC1101_WriteReg(CC1100_TEST1      ,0x31);
- CC1101_WriteReg(CC1100_TEST0      ,0x09);
- CC1101_WriteReg(CC1100_FIFOTHR    ,0x0D);
- CC1101_WriteReg(CC1100_PKTCTRL1   ,0x04);
- CC1101_WriteReg(CC1100_PKTCTRL0   ,0x45);
- CC1101_WriteReg(CC1100_ADDR       ,0x00);
- CC1101_WriteReg(CC1100_PKTLEN     ,0xFF);
+     CC1101_WriteReg(CC1100_MDMCFG3    ,0x83);
+     CC1101_WriteReg(CC1100_MDMCFG2    ,0x13);
+     CC1101_WriteReg(CC1100_MDMCFG1    ,0x22);
+     CC1101_WriteReg(CC1100_MDMCFG0    ,0xF8);
+     CC1101_WriteReg(CC1100_CHANNR     ,ChannelRF);
+     CC1101_WriteReg(CC1100_FREND1     ,0xB6);
+     CC1101_WriteReg(CC1100_FREND0     ,0x10);
+     CC1101_WriteReg(CC1100_MCSM0      ,0x18);
+     CC1101_WriteReg(CC1100_MCSM1      ,0x3F); // Only set in Master node
+     CC1101_WriteReg(CC1100_FOCCFG     ,0x1D);
+     CC1101_WriteReg(CC1100_BSCFG      ,0x1C);
+     CC1101_WriteReg(CC1100_FSCAL3     ,0xEA);
+     CC1101_WriteReg(CC1100_FSCAL2     ,0x2A);
+     CC1101_WriteReg(CC1100_FSCAL1     ,0x00);
+     CC1101_WriteReg(CC1100_FSCAL0     ,0x1F);
+     CC1101_WriteReg(CC1100_FSTEST     ,0x59);
+     CC1101_WriteReg(CC1100_TEST2      ,0x88);
+     CC1101_WriteReg(CC1100_TEST1      ,0x31);
+     CC1101_WriteReg(CC1100_TEST0      ,0x09);
+     CC1101_WriteReg(CC1100_FIFOTHR    ,0x0D);
+     CC1101_WriteReg(CC1100_PKTCTRL1   ,0x04);
+     CC1101_WriteReg(CC1100_PKTCTRL0   ,0x45);
+     CC1101_WriteReg(CC1100_ADDR       ,0x00);
+     CC1101_WriteReg(CC1100_PKTLEN     ,0xFF);
 
 	CC1101_WriteBurstReg(CC1100_PATABLE, PA, PA_LEN);
 	

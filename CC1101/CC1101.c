@@ -288,7 +288,7 @@ void cc1101_writesettings(void)
  /* 868Mhz */
  CC1101_WriteReg(CC1100_FREQ2      ,0x21);
  CC1101_WriteReg(CC1100_FREQ1      ,0x62);
- CC1101_WriteReg(CC1100_FREQ0    	 ,0x76);
+ CC1101_WriteReg(CC1100_FREQ0      ,0x76);
  CC1101_WriteReg(CC1100_MDMCFG4    ,0xF5);
  CC1101_WriteReg(CC1100_DEVIATN    ,0x15);
  CC1101_WriteReg(CC1100_AGCCTRL2   ,0x03);

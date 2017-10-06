@@ -17,6 +17,16 @@
 
 #define NULL    0
 
+//            |   TIVA C   |        |  MODULE CC1101 |
+//            |         3v3|------->|VCC             |
+//            |         GND|------->|GND             |
+//            |         PB4|------->|CLK             |
+//            |         PB6|------->|MISO            |
+//            |         PB7|------->|MOSI            |
+//            |         PE0|------->|CSN             |
+//            |         PB2|------->|DO              |
+//            |         PB5|------->|D2              |
+
 #define CC1101_GDO0_PIN             GPIO_PIN_2
 #define CC1101_GDO2_PIN             GPIO_PIN_5
 #define CC1101_MOSI_PIN             GPIO_PIN_7
